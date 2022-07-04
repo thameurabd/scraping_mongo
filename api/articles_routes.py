@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from models.articles_model import BBC
-from config.database import connexion
+from database import connexion
 
 
 # defining models to serialize and convert mongo records into dicts and visversa

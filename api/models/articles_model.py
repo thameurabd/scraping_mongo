@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup as bs
-from config.database import connexion
+from database import connexion
 class BBC:
     def __init__(self, url:str):
         article = requests.get(url)
@@ -29,4 +29,3 @@ parsed_dict = {"title":parsed.title, "author":parsed.author, "summary":parsed.su
 
 #inserting into MongoDB 
 connexion["scraping"]["articles_db"].insert_one(parsed_dict)
-

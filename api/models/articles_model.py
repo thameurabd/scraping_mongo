@@ -3,7 +3,11 @@ from bs4 import BeautifulSoup as bs
 from database import connexion
 class BBC:
     def __init__(self, url:str):
-        article = requests.get(url)
+        try:
+            article = requests.get(url)
+        except requests.exceptions.RequestException as e:
+            raise SystemExit(e)
+                
         self.soup = bs(article.content, "html.parser")
         self.title = self.get_title()
         self.author = self.get_author()

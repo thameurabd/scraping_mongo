@@ -3,6 +3,9 @@
 ## Purpose
 This quickstart project is a POC (proof of concept) to scrape new data from BBC webstite using Python, BeautifulSoup as a scraping tool, Mongo DB as a database and FastAPI to expose results via API
 
+## Choice of API framework
+For this application I chose to use FastAPI to handle API, it allows an easy and quick implementation of API endpoints and interaction with the database. The main feature of FastAPI is that it automatically generates documentation via Swagger UI interface where we can test the endpoints.
+
 ## Limitations and imporovement points
 * This application uses BeautifulSoup as a scraping library, fast to implement but has limited scraping features compared to scrapy which is a complete framework.
 * The main limitation with htis scraping approach is that, we need to specify classes and divs Ids to scrape after manually inspecting the webpage elements.
